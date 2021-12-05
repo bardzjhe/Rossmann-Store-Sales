@@ -6,9 +6,9 @@ library(scales)
 library(RColorBrewer)
 
 # load data from .csv file
-train <- read_csv("F:/1semY2/GameTheory/Project/kaggle/Rossmann-Store-Sales/input/train.csv", col_types = list(StateHoliday = col_character()))
-test <- read_csv("F:/1semY2/GameTheory/Project/kaggle/Rossmann-Store-Sales/input/test.csv", col_types = list(StateHoliday = col_character()))
-store <- read_csv("F:/1semY2/GameTheory/Project/kaggle/Rossmann-Store-Sales/input/store.csv")
+train <- read_csv("../input/train.csv", col_types = list(StateHoliday = col_character()))
+test <- read_csv("../input/test.csv", col_types = list(StateHoliday = col_character()))
+store <- read_csv("../input/store.csv")
 
 # Add each store's average sales and customers to hthe store-level data frame
 store <- left_join(store, summarize(group_by(train[train$Open == 1,], Store)
